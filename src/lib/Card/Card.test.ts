@@ -5,10 +5,12 @@ import Card from './Card.svelte';
 const mockTitleProp = 'This is the mock title!!';
 const mockDescriptionProp = 'This is the mock description!!';
 
+const mockData = { title: mockTitleProp, description: mockDescriptionProp, id: 1 };
+
 describe('Card', () => {
 	it('should render with title prop passed in', () => {
 		const { container } = render(Card, {
-			title: mockTitleProp
+			data: mockData
 		});
 		// select the title
 		const title = screen.getByText(mockTitleProp);
@@ -18,7 +20,7 @@ describe('Card', () => {
 
 	it('should render with description prop passed in', () => {
 		const { container } = render(Card, {
-			description: mockDescriptionProp
+			data: mockData
 		});
 		// select the description
 		const description = screen.getByText(mockDescriptionProp);
