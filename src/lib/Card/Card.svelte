@@ -1,7 +1,7 @@
 <script lang="ts">
     export let data = {title: "This is the title", id:1, description: 'This is the description'}
     export let isAdd: boolean = true;
-
+    
     const {title, description, id} = data
 </script>
 
