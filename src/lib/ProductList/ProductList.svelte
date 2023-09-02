@@ -33,8 +33,6 @@
 
 <div class="flex flex-col gap-4">
     {#each productList as item}
-    <Item item={item}>
-        <ItemForm/>
-    </Item>
+    <Item item={item}/>
     {/each}
 </div>
