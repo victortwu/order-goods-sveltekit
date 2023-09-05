@@ -1,38 +1,29 @@
 <script lang="ts">
     import Item from "$lib/Item/Item.svelte";
-    import ItemForm from "$lib/ItemForm/ItemForm.svelte";
-    import type {ItemType} from "$lib/types";
+    import { productList, shopppingList } from "./tempData";
 
-    export const productList: ItemType[] = [
-    {
-        id: 20796680000,
-        RDproductName: 'BF HALAL CHUCKROLL R/W',
-        name: 'Beef Chuck',
-        category: 'Food COGS'
-    },
-    {
-        id: 20713500000,
-        RDproductName: 'LAMB GROUND',
-        name: 'Ground Lamb',
-        category: 'Food COGS'
-    },
-    {
-        id: 76069501695,
-        RDproductName: 'YOG DAHI W/M JF 5#',
-        name: 'Yogurt',
-        category: 'Food COGS'
-    },
-    {
-        id: 20795020000,
-        RDproductName: 'CHX HAL THIGH CVP',
-        name: 'Chicken Thigh',
-        category: 'Food COGS'
-    },
-]
+    let query = '';
+
+    const onInput = (e: Event) => {
+        query = (e.target as HTMLInputElement).value
+    }
+
+    $: filterdList = productList.filter(item => {
+            if (query === '') {
+                return item
+            } else if (item.name.toLowerCase().includes(query.toLowerCase())) {
+                return item
+            }
+        })
+     
+    const isItInTheList =  (id: number) => {
+        return !!shopppingList.find(item => item.item.id === id)
+    }
 </script>
 
 <div class="flex flex-col gap-4">
-    {#each productList as item}
-    <Item item={item}/>
+    <input on:input={(e) => onInput(e)} class="rounded p-2 max-w-lg text-slate-700 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="search" type="text" maxlength="30" placeholder="Search" bind:value={query}/>
+    {#each filterdList as item}
+        <Item item={item} isEdit={isItInTheList(item.id)}/>
     {/each}
 </div>
