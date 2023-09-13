@@ -13,18 +13,18 @@
     }
 </script>
 
-<div class="bg-violet-700 text-white max-w-lg p-2 overflow-hidden rounded shadow-lg">
+<div class="bg-black border-2 border-l-violet-900 border-y-black border-r-black text-cyan-400 p-4 overflow-hidden rounded-md shadow-lg">
         <div>
             <h4 class="mb-3 text-xl font-semibold tracking-tight">{item.name}</h4>
             {#if expanded}
                 <!-- close button -->
-                <button  on:click={toggleAccordion} class="float-right bg-violet-900 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-full">&#10005;</button>
+                <button  on:click={toggleAccordion} class="float-right text-3xl bg-transparent hover:text-cyan-200 text-cyan-400 font-bold py-2 px-4">^</button>
             {:else if isEdit}
                 <!-- edit button -->
-                <button on:click={toggleAccordion} class="float-right  bg-violet-900 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-full">&#9998;</button>
+                <button on:click={toggleAccordion} class="float-right text-2xl bg-transparent hover:text-cyan-200 text-cyan-400 font-bold py-2 px-4">&#9998;</button>
             {:else}
                 <!-- add button -->
-                <button  on:click={toggleAccordion} class="float-right text-lg bg-violet-900 hover:bg-violet-500 text-white font-bold py-2 px-4 rounded-full">+</button>
+                <button  on:click={toggleAccordion} class="float-right text-3xl bg-transparent hover:text-cyan-200 text-cyan-400 font-bold py-2 px-4">+</button>
             {/if}
         </div>
         
