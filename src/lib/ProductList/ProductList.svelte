@@ -21,9 +21,10 @@
     }
 </script>
 
-<div class="flex flex-col gap-4">
-    <input on:input={(e) => onInput(e)} class="rounded p-2 max-w-lg text-slate-700 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="search" type="text" maxlength="30" placeholder="Search" bind:value={query}/>
-    {#each filterdList as item}
+
+    <div class="flex flex-col w-full md:w-3/4 lg:w-1/2 gap-6">
+        <input on:input={(e) => onInput(e)} class="rounded p-2 bg-black text-slate-200 border-gray-300 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" id="search" type="text" maxlength="30" placeholder="Search" bind:value={query}/>
+        {#each filterdList as item}
         <Item item={item} isEdit={isItInTheList(item.id)}/>
-    {/each}
-</div>
+        {/each}
+    </div>
