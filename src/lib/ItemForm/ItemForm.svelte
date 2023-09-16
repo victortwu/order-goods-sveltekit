@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { ItemType } from "$lib/types"
+    import { shopppingList } from "$lib/ProductList/tempData";
 
     export let item: ItemType
     export let isEdit: boolean = false
@@ -7,6 +8,17 @@
 
     let qty = 0
     let caseOrUnit: 'case' | 'unit' = 'case'
+
+    const id = item.id
+
+    if (isEdit) {
+        shopppingList.forEach(item => {
+            if (item.item.id === id) {
+                qty = item.quantity.number
+                caseOrUnit = item.quantity.caseOrUnit as 'case' | 'unit'
+            }
+        })
+    }
 
     const increment = () => {
         qty++
@@ -57,7 +69,7 @@
               </label>  
         </div>
 
-        <button type="submit" disabled={qty <= 0 || qty > 99} class="max-h-10 bg-violet-900 hover:bg-violet-500 text-white py-2 px-4 rounded disabled:opacity-50">{isEdit ? 'Edit' : `Add ${qty} ${caseOrUnit}${qty > 1 ? 's' : ''}`}</button> 
+        <button type="submit" disabled={qty <= 0 || qty > 99} class="max-h-10 bg-violet-900 hover:bg-violet-500 text-white py-2 px-4 rounded disabled:opacity-50">{`${isEdit ? '' : 'Add'} ${qty} ${caseOrUnit}${qty > 1 ? 's' : ''}`}</button> 
   
     </div>
 </form>

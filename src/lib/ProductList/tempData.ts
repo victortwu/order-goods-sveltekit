@@ -36,7 +36,7 @@ export const shopppingList = [
 			category: 'Food COGS'
 		},
 		quantity: {
-			number: 1,
+			number: 7,
 			caseOrUnit: 'case'
 		}
 	}
