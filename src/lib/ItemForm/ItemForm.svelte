@@ -1,6 +1,8 @@
 <script lang="ts">
     import type { ItemType } from "$lib/types"
     import { shopppingList } from "$lib/ProductList/tempData";
+    import LeftChevron from '$lib/Icons/LeftChevron.svelte';
+    import RightChevron from '$lib/Icons/RightChevron.svelte';
 
     export let item: ItemType
     export let isEdit: boolean = false
@@ -52,9 +54,9 @@
         <div class="flex flex-col">       
             <label class="block mb-1 text-xs opacity-0" for='quantity'>Quantity</label>
             <div>
-                <button class="w-6" on:click|preventDefault={decrement}>&#10094;</button>
+                <button on:click|preventDefault={decrement}><LeftChevron /></button>
                 <input class="w-8 h-8 p-2 aspect-square text-violet-700 placeholder-violet-600 border rounded focus:shadow-outline [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" id='quantity' type="number" min="0" bind:value={qty} />
-                <button class="w-6" on:click|preventDefault={increment}>&#10095;</button>
+                <button on:click|preventDefault={increment}><RightChevron /></button>
             </div>
            
         </div>

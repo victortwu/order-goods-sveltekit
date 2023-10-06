@@ -6,3 +6,14 @@ export type ItemType = {
 	category?: string;
 	subCategory?: string;
 };
+
+export type QuantityType = {
+	number: number;
+	caseOrUnit: 'case' | 'unit';
+};
+
+export type AddedItemType = {
+	id?: string;
+	item: ItemType;
+	quantity: QuantityType;
+};
