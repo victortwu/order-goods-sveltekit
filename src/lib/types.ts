@@ -1,7 +1,7 @@
 export type ItemType = {
-	id: number;
+	id: number | string;
 	name: string;
-	upc?: number;
+	upc?: number | string;
 	RDproductName?: string;
 	category?: string;
 	subCategory?: string;
@@ -10,6 +10,7 @@ export type ItemType = {
 export type QuantityType = {
 	number: number;
 	caseOrUnit: 'case' | 'unit';
+	isCase?: boolean;
 };
 
 export type AddedItemType = {
