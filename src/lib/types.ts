@@ -3,6 +3,7 @@ export type ItemType = {
 	name: string;
 	upc?: number | string;
 	RDproductName?: string;
+	vendorId?: string;
 	category?: string;
 	subCategory?: string;
 };
@@ -14,7 +15,6 @@ export type QuantityType = {
 };
 
 export type AddedItemType = {
-	id?: string;
 	item: ItemType;
 	quantity: QuantityType;
 };

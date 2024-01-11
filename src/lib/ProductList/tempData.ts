@@ -1,4 +1,4 @@
-import type { AddedItemType, ItemType } from '$lib/types';
+import type { ItemType } from '$lib/types';
 
 export const productList: ItemType[] = [
 	{
@@ -147,86 +147,5 @@ export const productList: ItemType[] = [
 		name: 'To Go Sauce Container Lids',
 		category: 'Packaging COGS',
 		upc: 76069502223
-	}
-];
-
-export const shopppingList: AddedItemType[] = [
-	{
-		item: {
-			id: '3f3983fe-52d9-4b9e-a99c-d699a1062ac8',
-			RDproductName: 'YOG DAHI W/M JF 5#',
-			name: 'Yogurt',
-			category: 'Food COGS',
-			upc: 76069501695
-		},
-		quantity: {
-			number: 7,
-			caseOrUnit: 'case'
-		}
-	},
-	{
-		item: {
-			id: 'b73ffb66-ed35-43c1-8c37-307573a46e2b',
-			RDproductName: 'PD GARLIC PLD 5LB',
-			name: 'Peeled Garlic',
-			category: 'Food COGS',
-			upc: 68044410345
-		},
-		quantity: {
-			number: 3,
-			caseOrUnit: 'unit'
-		}
-	},
-	{
-		item: {
-			id: 'bf6c7fba-0298-4ce6-9672-f6c78c1f97c2',
-			RDproductName: 'PDU LEMON 5#',
-			name: 'Lemons',
-			category: 'Food COGS',
-			upc: 3338311902
-		},
-		quantity: {
-			number: 1,
-			caseOrUnit: 'unit'
-		}
-	},
-	{
-		item: {
-			id: 'f08007da-b821-45f9-8ce4-999b10ae5f25',
-			RDproductName: 'BAG SANDWICH-DX18',
-			name: 'Sandwich Bag #18',
-			category: 'Packaging COGS',
-			upc: 72181004112
-		},
-		quantity: {
-			number: 1,
-			caseOrUnit: 'case'
-		}
-	},
-	{
-		item: {
-			id: '10becdae-083d-492c-860f-6f3ef4fe77bc',
-			RDproductName: 'PAPER WRAP 15X16',
-			name: 'Paper Sandwich Wrap',
-			category: 'Packaging COGS',
-			upc: 78707400092
-		},
-		quantity: {
-			number: 2,
-			caseOrUnit: 'case'
-		}
-	},
-	{
-		item: {
-			id: '939be7e4-927b-49a4-a28e-36e6dda0b5bb',
-			RDproductName: 'CUP SOUF3.25ZSNSET',
-			name: 'To Go Sauce Containers 3.25 oz',
-			category: 'Packaging COGS',
-			upc: 76069502219
-		},
-		quantity: {
-			number: 1,
-			caseOrUnit: 'case'
-		}
 	}
 ];
