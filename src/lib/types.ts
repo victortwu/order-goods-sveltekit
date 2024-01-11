@@ -2,8 +2,8 @@ export type ItemType = {
 	id: number | string;
 	name: string;
 	upc?: number | string;
-	RDproductName?: string;
-	vendorId?: string;
+	vendorProductName?: string;
+	vendorID?: string;
 	category?: string;
 	subCategory?: string;
 };
