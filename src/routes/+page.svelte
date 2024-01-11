@@ -1,6 +1,5 @@
 <script lang="ts">
-    import ProductList from "$lib/ProductList/ProductList.svelte";
+	import ProductList from '$lib/ProductList/ProductList.svelte';
 </script>
 
 <ProductList />
-
