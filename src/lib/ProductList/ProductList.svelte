@@ -19,17 +19,24 @@
 		query = (e.target as HTMLInputElement).value;
 	};
 
-	$: filterdList = productList.filter((item) => {
+	$: isItInTheList = (id: number | string) => {
+		const addedItem = list.find((item) => item.item.id === id);
+		return {
+			isInList: !!addedItem,
+			quantity: {
+				number: addedItem?.quantity?.number || 0,
+				caseOrUnit: addedItem?.quantity?.caseOrUnit || 'case'
+			}
+		};
+	};
+
+	$: filteredList = productList.filter((item) => {
 		if (query === '') {
 			return item;
 		} else if (item.name.toLowerCase().includes(query.toLowerCase())) {
 			return item;
 		}
 	});
-
-	const isItInTheList = (id: number | string) => {
-		return !!list.find((item) => item.item.id === id);
-	};
 </script>
 
 {#if mounted}
@@ -43,8 +50,12 @@
 			placeholder="Search"
 			bind:value={query}
 		/>
-		{#each filterdList as item}
-			<Item {item} isEdit={isItInTheList(item.id)} />
+		{#each filteredList as item}
+			<Item
+				{item}
+				quantityType={isItInTheList(item.id).quantity}
+				isEdit={isItInTheList(item.id).isInList}
+			/>
 		{/each}
 	</div>
 {/if}
