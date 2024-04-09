@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { shoppingList } from '$lib/stores/shoppingListStore';
+	import { createList } from '$lib/API/createList';
 	import { onMount } from 'svelte';
 	import Item from '$lib/Item/Item.svelte';
 	import type { AddedItemType } from '$lib/types';
@@ -17,6 +18,7 @@
 			list: JSON.parse(localStorage.list)
 		};
 		console.log(payload);
+		createList(payload);
 		shoppingList.reset();
 	};
 </script>
