@@ -1,10 +1,12 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { fetchProductList } from '$lib/API/fetchProductList';
 	import { shoppingList } from '$lib/stores/shoppingListStore';
-	import { productList } from './tempData';
 	import Item from '$lib/Item/Item.svelte';
-	import type { AddedItemType } from '$lib/types';
+	import type { AddedItemType, ItemType } from '$lib/types';
 
+	let productList:ItemType[] = [];
+	
 	let mounted = false;
 
 	let list: AddedItemType[] = [];
@@ -36,6 +38,10 @@
 		} else if (item.name.toLowerCase().includes(query.toLowerCase())) {
 			return item;
 		}
+	});
+
+	onMount(async () => {
+		productList = await fetchProductList();
 	});
 </script>
 
